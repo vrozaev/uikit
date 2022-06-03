@@ -1,0 +1,157 @@
+import {Source, Props} from '@storybook/addon-docs';
+import {
+    ButtonExampleViewAction,
+    ButtonExampleViewNormal,
+    ButtonExampleViewOutlined,
+    ButtonExampleViewFlat,
+    ButtonExampleViewRaised,
+    ButtonExampleViewOutlinedDanger,
+    ButtonExampleViewFlatDanger,
+    ButtonExampleViewOutlinedInfo,
+    ButtonExampleViewFlatInfo,
+    ButtonExampleViewFlatSecondary,
+    ButtonExampleViewSpecial,
+    ButtonExampleState,
+    ButtonExampleSize,
+} from './examples/ButtonExampleView/ButtonExampleView';
+
+# Button
+
+```ts
+import {Button} from '@yandex-cloud/uikit';
+```
+
+[Описание](#описание)
+
+[Внешний вид](#внешний-вид)
+
+- [Action](#action)
+- [Normal](#normal)
+- [Outline](#outline)
+- [Flat](#flat)
+- [Raised](#raised)
+- [Outlined-info](#outlined-info)
+- [Flat-info](#flat-info)
+- [Outlined-danger](#outlined-danger)
+- [Flat-danger](#flat-danger)
+- [Flat-secondary](#flat-secondary)
+- [Специальные](#специальные)
+
+[Текст на кнопках](#текст-на-кнопках)
+
+[Состояния](#состояния)
+
+[Размер](#размер)
+
+[Свойства](#свойства)
+
+## Описание
+Кнопка используется как триггер для выполнения определённого действия.
+Основное назначение кнопки – запуск действия, очень редко используется для перехода на другую страницу вместо ссылок.
+
+Также кнопки используются в диалоговом окне, когда интерфейс предлагает совершить те или иные альтернативные действия.
+Например, продолжить работу или вернуться к редактированию.
+
+## Внешний вид
+Для проектирования интерфейсов облачных сервисов используем 5 основных (`action`, `normal`, `outline`, `flat`, `raised`),
+5 дополнительных (`outline-info`, `outline-danger`, `flat-info`, `flat-danger`, `flat-secondary`) и 3 специальных (`normal-contrast`, `outline-contrast`, `flat-contrast`) типов кнопок.
+За внешний вид отвечает свойство view.
+
+### Action
+Самая заметная кнопка, используется для ключевого действия на экране, требующего максимального внимания.
+Рекомендуем использовать только одну такую кнопку на странице (не считая диалоговые окна).
+
+<Source language="tsx" code={ButtonExampleViewAction.code}/>
+<ButtonExampleViewAction/>
+
+### Normal
+Это основной тип кнопки (используется по умолчанию). Используется для вторичных действий или когда нужно сохранить важность действия,
+но не слишком привлекать к нему внимание.
+
+<Source language="tsx" code={ButtonExampleViewNormal.code}/>
+<ButtonExampleViewNormal/>
+
+### Outline
+Используется для вторичных действий, требующих меньшего внимания на странице. Может использоваться как с основной кнопкой, так и без нее (только с акцентной).
+
+<Source language="tsx" code={ButtonExampleViewOutlined.code}/>
+<ButtonExampleViewOutlined/>
+
+### Flat
+Используется для вспомогательных действий, требующих наименьшего внимания на странице. Часто встречаются в списке кнопок, иконки (без текста) действий в редакторах.
+
+<Source language="tsx" code={ButtonExampleViewFlat.code}/>
+<ButtonExampleViewFlat/>
+
+### Raised
+Кнопка, располагающаяся поверх контента, обычно имеет фиксированное положение.
+
+<Source language="tsx" code={ButtonExampleViewRaised.code}/>
+<ButtonExampleViewRaised/>
+
+### Outlined-info
+Используются для выделения перехода в другой сервис или на внешний ресурс.
+
+<Source language="tsx" code={ButtonExampleViewOutlinedInfo.code}/>
+<ButtonExampleViewOutlinedInfo/>
+
+### Flat-info
+Используются для выделения перехода в другой сервис или на внешний ресурс.
+
+<Source language="tsx" code={ButtonExampleViewFlatInfo.code}/>
+<ButtonExampleViewFlatInfo/>
+
+### Outline-danger
+Кнопки стиля danger используются для отображения опасных действий: удаление, остановка, перезагрузка, эвакуация и прочее.
+`outline-danger` используется, когда достаточно места для размещения полноценной кнопки на странице или в модальном окне.
+
+<Source language="tsx" code={ButtonExampleViewOutlinedDanger.code}/>
+<ButtonExampleViewOutlinedDanger/>
+
+### Flat-danger
+Применяется для выделения деструктивного действия в общем списке действий над обьектом, выпадающем меню.
+
+<Source language="tsx" code={ButtonExampleViewFlatDanger.code}/>
+<ButtonExampleViewFlatDanger/>
+
+### Flat-secondary
+Менее акцентная, чем flat-кнопка. Часто используется как secondary в диалогах и модальных окнах.
+
+<Source language="tsx" code={ButtonExampleViewFlatSecondary.code}/>
+<ButtonExampleViewFlatSecondary/>
+
+### Специальные
+Кнопки `normal-contrast`, `outline-contrast`, `flat-contrast` используются для выделения действий на сложном фоне (например в баннерах или на цветном фоне).
+Тип использования зависит от нужной степени акциденции.
+
+<Source language="tsx" code={ButtonExampleViewSpecial.code}/>
+<ButtonExampleViewSpecial/>
+
+## Текст на кнопках
+Название кнопки должно однозначно говорить о том, что произойдет если на нее нажать. Если это действие, то оно должно отвечать на вопрос что сделать?
+
+- Название кнопки пишется с заглавной буквы (Сохранить, Переименовать, Создать диск, Добавить эндпоинт)
+- Действие на странице или в модальном окне должно соотноситься с заголовком (Например: Создание виртуального диска → Создать, Отменить)
+- Если это ссылка, то она должна отвечать на вопрос что? или что сделать?
+
+## Состояния
+<ButtonExampleState/>
+
+1. Default – Основное состояние кнопки, с которой можно взаимодействовать.
+2. Disabled – Состояние, когда взаимодействие с кнопкой по каким-то причинам недоступно.
+3. Loading – Состояние, когда пользователь запустил действие и ожидает ответа системы.
+4. Selected – Состояние, когда пользователь может переключаться между «Включить» и «Выключить»
+
+## Размер
+<ButtonExampleSize/>
+
+S – используются в местах, где стандартные кнопки слишком громоздкие (таблицы, небольшие карточки).
+
+M – Основной размер, используется в большинстве компонентов.
+
+L – Основные действия на странице в шапке, модальном окне или поп-апе.
+
+XL – Используются в промо и лендингах
+
+## Свойства
+<Props/>
