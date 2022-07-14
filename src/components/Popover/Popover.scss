@@ -96,6 +96,14 @@ $block: '.#{$ns}popover';
                     &:hover {
                         color: var(--yc-color-text-link-hover);
                     }
+
+                    &:visited {
+                        color: var(--yc-color-text-link-visited);
+                    }
+
+                    &:visited:hover {
+                        color: var(--yc-color-text-link-visited-hover);
+                    }
                 }
             }
 
